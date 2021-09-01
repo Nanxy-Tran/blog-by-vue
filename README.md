@@ -16,6 +16,7 @@ quasar dev
 ```bash
 yarn run lint
 ```
+### Ability to  auto sync
 
 ### Build the app for production
 ```bash
