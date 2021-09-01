@@ -10,10 +10,10 @@ jobs:
         with:
           script: |
             github.pulls.create({
-              title: `Sync for hot fix number: ${context.issue.number}`,
+              title: `Sync for hot fix number: ${context.issue.number} of ${context.issue.author}`,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 Thanks for quick fix !',
+              body: '👋 Thanks for hot fix !',
               head: 'master',
               base: 'develop',
               maintainer_can_modify: false
