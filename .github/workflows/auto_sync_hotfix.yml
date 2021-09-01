@@ -4,13 +4,14 @@ on:
 
 jobs:
   sync_branch:
+    if: contains(github.head_ref, 'hotfix/')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/github-script@v4
         with:
           script: |
             github.pulls.create({
-              title: `Sync for hot fix number: ${context.issue.number} of ${context.issue.author}`,
+              title: `Sync for hot fix number: ${context.issue.number} of ${github.actor}`,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: '👋 Thanks for hot fix !',
