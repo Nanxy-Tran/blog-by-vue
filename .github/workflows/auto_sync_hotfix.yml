@@ -1,0 +1,20 @@
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  sync_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v4
+        with:
+          script: |
+            github.pulls.create({
+              title: `Sync for hot fix number: ${context.issue.number}`,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '👋 Thanks for quick fix !',
+              head: 'master',
+              base: 'develop',
+              maintainer_can_modify: false
+            })
