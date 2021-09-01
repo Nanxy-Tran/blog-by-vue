@@ -10,8 +10,9 @@ jobs:
       - uses: actions/github-script@v4
         with:
           script: |
+            console.log(JSON.stringify(context.issue))
             github.pulls.create({
-              title: `Sync for hot fix number: ${context.issue.number} of ${github.actor}`,
+              title: `Sync for hot fix number: ${context.issue.number}`,
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: '👋 Thanks for hot fix !',
