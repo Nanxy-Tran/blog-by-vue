@@ -11,7 +11,7 @@ jobs:
         with:
           script: |
             console.log(JSON.stringify(github), 'github info come here')
-            console.log(JSON.stringify(context), 'context come here')
+            console.log(JSON.stringify(context.repo), 'context come here')
             github.pulls.create({
               title: `Sync for hot fix number: ${context.issue.number}`,
               owner: context.repo.owner,
