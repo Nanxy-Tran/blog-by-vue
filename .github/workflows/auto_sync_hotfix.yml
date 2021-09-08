@@ -10,8 +10,6 @@ jobs:
       - uses: actions/github-script@v4
         with:
           script: |
-            console.log(JSON.stringify(github), 'github info come here')
-            console.log(JSON.stringify(context.payload), 'context payload')
              console.log(JSON.stringify(context.payload.pull_request.head.ref), 'context head')
             github.pulls.create({
               title: `Sync for hot fix number: ${context.issue.number}`,
