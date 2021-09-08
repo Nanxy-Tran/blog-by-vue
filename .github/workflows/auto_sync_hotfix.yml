@@ -18,7 +18,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               body: `👋 Thanks for hot fix ! You can read the description [here](https://github.com/Nanxy-Tran/blog-by-vue/pull/${context.issue.number})`,
-              head: 'master',
+              head: context.payload.pull_request.head.ref,
               base: 'develop',
               maintainer_can_modify: false
             })
