@@ -17,6 +17,7 @@ quasar dev
 yarn run lint
 ```
 ### Ability to  auto sync
+auto create PR after hotfix
 
 ### Build the app for production
 ```bash
